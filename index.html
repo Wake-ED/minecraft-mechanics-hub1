@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Mechanics Hub - Jumping</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: url('https://i.imgur.com/8fKQZ0R.png'); /* grass block texture */
+      background-size: 64px 64px;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://i.imgur.com/8fKQZ0R.png');
+      background-size: cover;
+      padding: 30px;
+      text-align: center;
+      font-size: 1.5em;
+      border-bottom: 8px solid #3a9d23;
+      text-shadow: 2px 2px #000;
+    }
+    nav {
+      background-color: #2e2e2e;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-bottom: 4px solid #3a9d23;
+    }
+    nav a {
+      color: #3a9d23;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 2px solid #3a9d23;
+      background-color: #111;
+    }
+    nav a:hover {
+      background-color: #3a9d23;
+      color: #111;
+    }
+    .content {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .article {
+      background-color: rgba(34,34,34,0.9);
+      padding: 20px;
+      margin-bottom: 25px;
+      border: 4px solid #3a9d23;
+      box-shadow: 4px 4px #000;
+    }
+    .article h2 {
+      margin-top: 0;
+      color: #3a9d23;
+      text-shadow: 2px 2px #000;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 2px solid #3a9d23;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #111;
+      color: #3a9d23;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #111;
+      border-top: 4px solid #3a9d23;
+      color: #3a9d23;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>Minecraft Mechanics Hub</header>
+  <nav>
+    <a href="#">Redstone</a>
+    <a href="#">Mob AI</a>
+    <a href="#">Chunk Loading</a>
+    <a href="#">Game Rules</a>
+  </nav>
+  <div class="content">
+    <div class="article">
+      <h2>Jump Mechanics in Minecraft</h2>
+      <p><strong>Overview:</strong> Jumping in Minecraft is a fundamental mechanic governed by velocity, gravity, and hitboxes. While simple in appearance, it has been the subject of extensive community testing, especially regarding the controversial five-block jump.</p>
+
+      <h2>1. Basic Jumping</h2>
+      <p>Normal jumps elevate the player ~1.25 blocks vertically and ~2 blocks horizontally without sprinting. Auto-jump allows automatic traversal of 1-block obstacles.</p>
+
+      <h2>2. Sprint Jumping</h2>
+      <p>Sprinting increases horizontal velocity. The maximum reliable sprint jump is ~4.0 blocks. Edge cases (pixel-perfect positioning, ceiling collisions) can push this slightly (~4.1–4.2), but not to 5.</p>
+
+      <h2>3. Ceiling-Assisted Jumps</h2>
+      <p>Jumping under a 2-block ceiling alters trajectory. Some players report marginally increased reach, but controlled tests show this does not allow consistent five-block clears.</p>
+
+      <h2>4. Potions and Effects</h2>
+      <p>Jump Boost increases vertical height, Speed extends sprint momentum. Combined, they allow jumps beyond 5 blocks.</p>
+
+      <h2>5. Version Differences</h2>
+      <p>Java Edition physics are tick-based, consistently capping at ~4 blocks. Bedrock Edition has slightly different gravity, but the maximum remains ~4. Legacy console versions fueled myths due to less precise physics.</p>
+
+      <h2>6. Mobs and Jumping</h2>
+      <p>Mobs can jump 1 block high but do not sprint jump. Horses are unique, capable of clearing up to 5.5 blocks vertically depending on stats.</p>
+
+      <h2>7. Historical Notes</h2>
+      <p>Early Beta had inconsistent collision detection. Post-release stabilized physics, cementing the 4-block sprint jump as the maximum.</p>
+
+      <h2>8. The Five-Block Jump Controversy</h2>
+      <p>Some players insist five-block jumps are possible under ceilings or with precise timing. Evidence shows the maximum is ~4.0–4.2 blocks without modifiers. Myths persist due to edge landings, rounding decimals, and lag illusions.</p>
+
+      <h2>9. Summary Table</h2>
+      <table>
+        <tr>
+          <th>Jump Type</th>
+          <th>Vertical Height</th>
+          <th>Horizontal Distance</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Normal Jump</td>
+          <td>~1.25 blocks</td>
+          <td>~2 blocks</td>
+          <td>No sprint</td>
+        </tr>
+        <tr>
+          <td>Sprint Jump</td>
+          <td>~1.25 blocks</td>
+          <td>~4.0 blocks</td>
+          <td>Reliable max</td>
+        </tr>
+        <tr>
+          <td>Ceiling-Assisted Sprint</td>
+          <td>~1.25 blocks</td>
+          <td>~4.1–4.2 blocks</td>
+          <td>Edge case</td>
+        </tr>
+        <tr>
+          <td>With Speed Effect</td>
+          <td>Higher</td>
+          <td>5+ blocks</td>
+          <td>Requires potion</td>
+        </tr>
+        <tr>
+          <td>With Jump Boost</td>
+          <td>2+ blocks high</td>
+          <td>Slightly longer</td>
+          <td>Not reliable for 5</td>
+        </tr>
+        <tr>
+          <td>Horse Jump</td>
+          <td>Up to 5.5 blocks</td>
+          <td>Variable</td>
+          <td>Depends on horse stats</td>
+        </tr>
+      </table>
+
+      <h2>10. Conclusion</h2>
+      <p>The maximum reliable sprint jump in vanilla Minecraft is 4 blocks. Ceiling tricks can push slightly past 4, but not to 5. Potions or mods are required for consistent five-block jumps. The debate highlights the community’s passion for mechanics and precision testing.</p>
+    </div>
+  </div>
+  <footer>
+    Minecraft Mechanics Hub – Version 1.0.0
+  </footer>
+</body>
+</html>
